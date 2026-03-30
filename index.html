@@ -97,7 +97,6 @@
     .top-strip {
       display: flex; align-items: center; gap: 10px;
       margin-bottom: 18px;
-      text-decoration: none;
       animation: fadeUp 0.5s ease both;
     }
     .strip-line { height:1px; flex:1; max-width:55px; background:linear-gradient(90deg,transparent,rgba(220,20,50,0.65),transparent); }
@@ -174,7 +173,6 @@
     }
 
     /* ── TITLE ── */
-    .title-link { text-decoration:none; display:block; width:100%; }
     .title-wrap { text-align:center; margin-top:14px; animation:fadeUp 0.5s 0.18s ease both; }
     .pre-lbl {
       font-family:'Orbitron',sans-serif;
@@ -199,14 +197,14 @@
     .tagline .hi2 { color:var(--gold); font-weight:700; }
 
     /* ── STATS ── */
-    .stats-link { text-decoration:none; display:block; width:100%; max-width:420px; margin-top:16px; animation:fadeUp 0.5s 0.26s ease both; }
+    .stats-wrap {
+      width:100%; max-width:420px; margin-top:16px; animation:fadeUp 0.5s 0.26s ease both;
+    }
     .stats-row {
       display:grid; grid-template-columns:repeat(4,1fr);
       background:rgba(255,255,255,0.025);
       border:1px solid var(--border); border-radius:14px; overflow:hidden;
-      transition:border-color 0.25s, box-shadow 0.25s;
     }
-    .stats-link:hover .stats-row { border-color:rgba(255,45,80,0.45); box-shadow:0 0 24px rgba(200,16,46,0.14); }
     .stat-cell { padding:12px 6px; text-align:center; position:relative; }
     .stat-cell + .stat-cell::before { content:''; position:absolute; left:0; top:18%; bottom:18%; width:1px; background:var(--border); }
     .sc-n {
@@ -221,14 +219,12 @@
     /* ── PILLS ── */
     .pills { display:flex; flex-wrap:wrap; gap:7px; justify-content:center; width:100%; margin-top:14px; animation:fadeUp 0.5s 0.34s ease both; }
     .pill {
-      text-decoration:none;
       display:flex; align-items:center; gap:6px;
       background:rgba(255,255,255,0.03); border:1px solid var(--border); border-radius:8px;
       padding:7px 14px; font-size:clamp(11px,3vw,13px); font-weight:600;
       color:var(--txt); letter-spacing:0.03em;
-      transition:background 0.2s, border-color 0.2s, transform 0.15s;
+      cursor: default;
     }
-    .pill:hover { background:rgba(255,45,80,0.1); border-color:rgba(255,45,80,0.45); transform:translateY(-1px); }
     .pill .pi { font-size:15px; }
     .pill .live-tag {
       font-family:'Orbitron',sans-serif; font-size:6.5px; font-weight:900;
@@ -241,13 +237,11 @@
     /* ── TICKER ── */
     .ticker-row { display:flex; gap:7px; align-items:center; flex-wrap:wrap; justify-content:center; margin-top:12px; animation:fadeUp 0.5s 0.42s ease both; }
     .ti {
-      text-decoration:none;
       display:flex; align-items:center; gap:6px;
       background:rgba(255,255,255,0.025); border:1px solid rgba(200,16,46,0.18); border-radius:7px;
       padding:6px 12px; font-size:clamp(10px,2.8vw,12px); font-weight:600; letter-spacing:0.04em;
-      transition:border-color 0.2s, background 0.2s;
+      cursor: default;
     }
-    .ti:hover { border-color:rgba(255,45,80,0.5); background:rgba(255,45,80,0.06); }
     .tdot { width:6px; height:6px; border-radius:50%; flex-shrink:0; animation:blink 1.2s ease-in-out infinite; }
     .tdot.g { background:var(--green); box-shadow:0 0 7px var(--green); }
     .tdot.r { background:var(--live);  box-shadow:0 0 7px var(--live); }
@@ -305,13 +299,12 @@
 
     /* ══ RESPONSIVE ══ */
 
-    /* Tiny phones */
     @media (max-width:380px) {
       .page { padding:55px 14px 44px; }
       .logo-outer { width:128px; height:128px; }
       h1 { font-size:46px; }
       .tagline { font-size:11.5px; }
-      .stats-link { margin-top:12px; }
+      .stats-wrap { margin-top:12px; }
       .stat-cell { padding:10px 3px; }
       .sc-n { font-size:18px; }
       .sc-l { font-size:6px; }
@@ -324,26 +317,23 @@
       .corner { width:38px; height:38px; }
     }
 
-    /* Standard phones */
     @media (min-width:381px) and (max-width:520px) {
       .page { padding:58px 18px 46px; }
       .logo-outer { width:148px; height:148px; }
     }
 
-    /* Tablets */
     @media (min-width:521px) and (max-width:767px) {
       .page { padding:70px 30px 55px; }
       .logo-outer { width:168px; height:168px; }
       h1 { font-size:72px; }
     }
 
-    /* Desktop */
     @media (min-width:768px) {
       .page { padding:28px 50px 30px; }
       .logo-outer { width:160px; height:160px; }
       h1 { font-size:80px; }
       .tagline { font-size:15px; }
-      .stats-link { max-width:480px; margin-top:18px; }
+      .stats-wrap { max-width:480px; margin-top:18px; }
       .stat-cell { padding:14px 8px; }
       .sc-n { font-size:26px; }
       .sc-l { font-size:7.5px; }
@@ -357,7 +347,7 @@
     @media (min-width:1200px) {
       .logo-outer { width:178px; height:178px; }
       h1 { font-size:90px; }
-      .stats-link, .cta-wrap { max-width:540px; }
+      .stats-wrap, .cta-wrap { max-width:540px; }
     }
   </style>
 </head>
@@ -382,14 +372,14 @@
 
   <main class="page">
 
-    <!-- Top Strip -->
-    <a href="" target="_blank" rel="noopener" class="top-strip">
+    <!-- Top Strip (no link) -->
+    <div class="top-strip">
       <div class="strip-line"></div>
       <div class="strip-txt">🏆 &nbsp;India's #1 Sports Exchange&nbsp; 🏆</div>
       <div class="strip-line"></div>
-    </a>
+    </div>
 
-    <!-- Logo -->
+    <!-- Logo (link kept) -->
     <a href="https://www.99pulse.org/login" target="_blank" rel="noopener" class="logo-link">
       <div class="logo-section">
         <div class="logo-outer">
@@ -414,45 +404,43 @@
       </div>
     </a>
 
-    <!-- Title -->
-    <a href="" target="_blank" rel="noopener" class="title-link">
-      <div class="title-wrap">
-        <div class="pre-lbl">— Official VIP Platform —</div>
-        <h1><span class="r">99</span> <span class="g">Pulse</span></h1>
-        <p class="tagline">
-          <span class="hi">Trusted Since 2020</span> · <span class="hi2">Instant ID · Fast Withdrawal</span> 💰<br/>
-          Cricket · Tennis · Soccer · Casino — Play Like A Pro
-        </p>
-      </div>
-    </a>
+    <!-- Title (no link) -->
+    <div class="title-wrap">
+      <div class="pre-lbl">— Official VIP Platform —</div>
+      <h1><span class="r">99</span> <span class="g">Pulse</span></h1>
+      <p class="tagline">
+        <span class="hi">Trusted Since 2020</span> · <span class="hi2">Instant ID · Fast Withdrawal</span> 💰<br/>
+        Cricket · Tennis · Soccer · Casino — Play Like A Pro
+      </p>
+    </div>
 
-    <!-- Stats -->
-    <a href="" target="_blank" rel="noopener" class="stats-link">
+    <!-- Stats (no link) -->
+    <div class="stats-wrap">
       <div class="stats-row">
         <div class="stat-cell"><div class="sc-n">50L+</div><div class="sc-l">Users</div></div>
         <div class="stat-cell"><div class="sc-n g">24/7</div><div class="sc-l">Support</div></div>
         <div class="stat-cell"><div class="sc-n w">FREE</div><div class="sc-l">Join Now</div></div>
         <div class="stat-cell"><div class="sc-n g">5★</div><div class="sc-l">Rated</div></div>
       </div>
-    </a>
+    </div>
 
-    <!-- Pills -->
+    <!-- Pills (no links) -->
     <div class="pills">
-      <a href="" target="_blank" rel="noopener" class="pill"><span class="pi">🏏</span>Cricket<span class="live-tag">LIVE</span></a>
-      <a href="" target="_blank" rel="noopener" class="pill"><span class="pi">🎾</span>Tennis</a>
-      <a href="" target="_blank" rel="noopener" class="pill"><span class="pi">⚽</span>Soccer</a>
-      <a href="" target="_blank" rel="noopener" class="pill"><span class="pi">🐎</span>Horse</a>
-      <a href="" target="_blank" rel="noopener" class="pill"><span class="pi">🎰</span>Casino</a>
+      <div class="pill"><span class="pi">🏏</span>Cricket<span class="live-tag">LIVE</span></div>
+      <div class="pill"><span class="pi">🎾</span>Tennis</div>
+      <div class="pill"><span class="pi">⚽</span>Soccer</div>
+      <div class="pill"><span class="pi">🐎</span>Horse</div>
+      <div class="pill"><span class="pi">🎰</span>Casino</div>
     </div>
 
-    <!-- Ticker -->
+    <!-- Ticker (no links) -->
     <div class="ticker-row">
-      <a href="" target="_blank" rel="noopener" class="ti"><div class="tdot g"></div><span class="tl">IPL</span>&nbsp;<span class="tv g">▲ LIVE</span></a>
-      <a href="" target="_blank" rel="noopener" class="ti"><div class="tdot g"></div><span class="tl">NZ vs SA</span>&nbsp;<span class="tv g">▲ 1.86</span></a>
-      <a href="" target="_blank" rel="noopener" class="ti"><div class="tdot r"></div><span class="tl">Tennis</span>&nbsp;<span class="tv r">▼ 1.62</span></a>
+      <div class="ti"><div class="tdot g"></div><span class="tl">IPL</span>&nbsp;<span class="tv g">▲ LIVE</span></div>
+      <div class="ti"><div class="tdot g"></div><span class="tl">NZ vs SA</span>&nbsp;<span class="tv g">▲ 1.86</span></div>
+      <div class="ti"><div class="tdot r"></div><span class="tl">Tennis</span>&nbsp;<span class="tv r">▼ 1.62</span></div>
     </div>
 
-    <!-- CTA -->
+    <!-- CTA Button (link kept) -->
     <div class="cta-wrap">
       <a href="https://www.99pulse.org/login" target="_blank" rel="noopener" class="btn">
         <span class="btn-in">
@@ -469,7 +457,7 @@
   <p class="credit">
     <span>18+ · Play Responsibly</span>
     <span class="credit-sep"></span>
-    <a href="" target="_blank" rel="noopener">https://www.99pulse.org/login</a>
+    <a href="https://www.99pulse.org/login" target="_blank" rel="noopener">https://www.99pulse.org/login</a>
     <span class="credit-sep"></span>
     <span>Ads by <a href="https://t.me/+TRlJl628l-FkMWE9" target="_blank" rel="noopener" class="ag">@Nexgroww_agency</a></span>
   </p>
@@ -485,7 +473,6 @@
       c.appendChild(d);
     }
   </script>
-
 
 </body>
 </html>
