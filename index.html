@@ -2,616 +2,386 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>99PULSE – Official VIP | India's #1 Sports Exchange</title>
-  <meta name="description" content="Join 99PULSE VIP – India's most trusted sports exchange. Cricket, Tennis, Soccer, Casino & more. Instant ID. Safe & Secure."/>
-  <meta name="robots" content="index, follow"/>
-  <link rel="canonical" href="https://wa.link/qs8ku0"/>
-  <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Teko:wght@400;500;600;700&family=Exo+2:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
-
+  <meta name="description" content="Join 99PULSE VIP – India's most trusted sports exchange. Instant ID. Fast Withdrawal."/>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
+      --bg:     #0a0a0f;
+      --card:   rgba(255,255,255,0.04);
+      --border: rgba(255,255,255,0.08);
       --gold:   #f5c518;
-      --gold2:  #ffaa00;
-      --gold3:  #ffe066;
-      --dark:   #07050e;
-      --dark2:  #0d0b1a;
-      --purple: #6c2eb9;
-      --purp2:  #9b4de8;
-      --purp3:  #c084fc;
-      --neon:   #00ffe0;
-      --neon2:  #00c9b1;
-      --txt:    #f0eaff;
-      --muted:  rgba(200,180,255,0.45);
-      --border: rgba(108,46,185,0.28);
-      --green:  #00f0a0;
-      --live:   #ff3860;
+      --txt:    #ffffff;
+      --muted:  rgba(255,255,255,0.5);
+      --wa:     #25D366;
+      --wa3:    #1eff7a;
     }
 
     html, body {
-      min-height: 100%; width: 100%;
-      background: var(--dark);
-      font-family: 'Exo 2', sans-serif;
+      min-height: 100%;
+      width: 100%;
+      background: var(--bg);
+      font-family: 'Poppins', sans-serif;
       color: var(--txt);
       overflow-x: hidden;
-      overflow-y: auto;
     }
 
-    /* ══ BG ══ */
-    .bg-wrap { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
-
-    .bg-base {
-      position: absolute; inset: 0;
+    /* BG */
+    .bg {
+      position: fixed; inset: 0; z-index: 0; pointer-events: none;
       background:
-        radial-gradient(ellipse 75% 50% at 15% 10%,  rgba(108,46,185,0.35) 0%, transparent 60%),
-        radial-gradient(ellipse 60% 45% at 88% 90%, rgba(0,255,224,0.10) 0%, transparent 55%),
-        radial-gradient(ellipse 55% 55% at 55% 50%, rgba(80,20,130,0.15) 0%, transparent 70%),
-        #07050e;
+        radial-gradient(ellipse 70% 50% at 20% 10%, rgba(37,211,102,0.07) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 80% 90%, rgba(245,197,24,0.05) 0%, transparent 60%),
+        #0a0a0f;
     }
-
-    /* Hexagonal grid bg */
-    .bg-hex {
-      position: absolute; inset: 0; opacity: 0.07;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100'%3E%3Cpath d='M28 66L0 50V16L28 0l28 16v34L28 66zM28 100L0 84V66l28 16 28-16v18L28 100z' fill='none' stroke='%239b4de8' stroke-width='1'/%3E%3C/svg%3E");
-      background-size: 56px 100px;
-      animation: hexDrift 30s linear infinite;
-    }
-    @keyframes hexDrift { to { background-position: 56px 100px; } }
-
-    /* diagonal beam */
-    .bg-beam {
-      position: absolute;
-      width: 2px; height: 200%;
-      background: linear-gradient(180deg, transparent, rgba(0,255,224,0.25) 40%, rgba(155,77,232,0.35) 60%, transparent);
-      top: -50%; left: 32%;
-      transform: rotate(-22deg);
-      filter: blur(4px);
-      animation: beamFade 8s ease-in-out infinite;
-    }
-    .bg-beam2 {
-      position: absolute;
-      width: 1.5px; height: 200%;
-      background: linear-gradient(180deg, transparent, rgba(245,197,24,0.18) 50%, transparent);
-      top: -50%; left: 68%;
-      transform: rotate(15deg);
-      filter: blur(3px);
-      animation: beamFade 12s ease-in-out infinite reverse;
-    }
-    @keyframes beamFade { 0%,100%{opacity:0.2} 50%{opacity:1} }
-
-    .orb { position: absolute; border-radius: 50%; filter: blur(80px); }
-    .o1 { width:500px;height:400px;background:rgba(108,46,185,0.22);top:-160px;left:-120px;animation:orbF 14s ease-in-out infinite alternate;}
-    .o2 { width:350px;height:350px;background:rgba(0,255,224,0.07);bottom:-100px;right:-80px;animation:orbF 18s ease-in-out infinite alternate-reverse;}
-    .o3 { width:250px;height:200px;background:rgba(245,197,24,0.06);top:40%;right:-60px;animation:orbF 11s ease-in-out infinite alternate;}
-    @keyframes orbF { to { transform: translate(20px,28px) scale(1.07); } }
-
-    /* scan line */
-    .bg-scan {
-      position: absolute; left: 0; right: 0; height: 1.5px;
-      background: linear-gradient(90deg, transparent, rgba(0,255,224,0.5) 30%, rgba(155,77,232,0.6) 55%, rgba(0,255,224,0.4) 75%, transparent);
-      filter: blur(0.5px);
-      animation: scanMove 11s linear infinite;
-    }
-    @keyframes scanMove { 0%{top:-3px;opacity:0} 5%{opacity:0.9} 90%{opacity:0.2} 100%{top:100%;opacity:0} }
-
-    .particles { position: absolute; inset: 0; }
-    .p { position:absolute; border-radius:50%; animation:pFloat linear infinite; opacity:0; }
-    @keyframes pFloat {
-      0%  { opacity:0; transform:translateY(0) scale(0.3); }
-      12% { opacity:1; }
-      85% { opacity:0.2; }
-      100%{ opacity:0; transform:translateY(-90px) scale(1.4); }
-    }
-
-    /* ══ PAGE ══ */
-    .page {
-      position: relative; z-index: 3;
-      min-height: 100vh;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      padding: 65px 22px 52px;
-    }
-
-    /* ── CORNER FRAMES ── */
-    .corner { position:fixed; width:60px; height:60px; z-index:2; pointer-events:none; }
-    .corner svg { width:100%; height:100%; }
-    .c-tl { top:10px; left:10px; }
-    .c-tr { top:10px; right:10px; transform:scaleX(-1); }
-    .c-bl { bottom:10px; left:10px; transform:scaleY(-1); }
-    .c-br { bottom:10px; right:10px; transform:scale(-1,-1); }
-
-    /* ── TOP BADGE ── */
-    .top-badge {
-      display: flex; align-items: center; gap: 10px;
-      margin-bottom: 20px;
-      animation: fadeUp 0.5s ease both;
-    }
-    .tb-line { height:1px; width:50px; background: linear-gradient(90deg, transparent, rgba(155,77,232,0.7), transparent); }
-    .tb-txt {
-      font-family: 'Teko', sans-serif;
-      font-size: 12px; font-weight: 600;
-      letter-spacing: 0.35em; color: var(--muted);
-      text-transform: uppercase; white-space: nowrap;
-    }
-    .tb-dot { width:6px; height:6px; border-radius:50%; background:var(--neon); box-shadow:0 0 10px var(--neon); animation:blink 1.6s ease-in-out infinite; }
-
-    /* ── LOGO ── */
-    .logo-link { text-decoration: none; display: block; }
-    .logo-section {
-      display: flex; flex-direction: column; align-items: center;
-      animation: fadeUp 0.5s 0.1s ease both;
-    }
-
-    .logo-outer { position:relative; width:158px; height:158px; }
-
-    /* hexagonal clip for logo */
-    .hex-clip {
+    .bg::after {
+      content: '';
       position: absolute; inset: 0;
-      clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
-      background: linear-gradient(135deg, #1a0f2e, #120a20);
+      background-image:
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+
+    /* LAYOUT */
+    .page {
+      position: relative; z-index: 1;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px 65px;
+    }
+
+    /* TOP LABEL */
+    .top-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.28em;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-bottom: 22px;
+      text-align: center;
+    }
+    .top-label span { color: var(--gold); }
+
+    /* LOGO */
+    .logo-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+    .logo-img-wrap {
+      width: 108px; height: 108px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.05);
+      border: 2px solid rgba(245,197,24,0.22);
       display: flex; align-items: center; justify-content: center;
-      z-index: 2;
+      box-shadow: 0 0 28px rgba(245,197,24,0.10), 0 0 55px rgba(37,211,102,0.05);
+      overflow: hidden;
     }
-    .hex-clip img { width: 72%; height: 72%; object-fit: contain; filter: drop-shadow(0 0 14px rgba(155,77,232,0.7)); }
-    .hex-clip .logo-fb { font-family:'Black Ops One',sans-serif; font-size:34px; color:var(--gold); }
-
-    /* rotating hex border */
-    .hex-ring1 {
-      position: absolute; inset: -6px;
-      clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
-      background: conic-gradient(from 0deg, #6c2eb9, #00ffe0, #f5c518, #9b4de8, #00ffe0, #6c2eb9);
-      animation: spin 4s linear infinite;
-      z-index: 1;
+    .logo-img-wrap img { width: 80%; height: 80%; object-fit: contain; }
+    .logo-fallback { font-family: 'Bebas Neue', sans-serif; font-size: 36px; color: var(--gold); }
+    .logo-name {
+      margin-top: 10px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 30px;
+      letter-spacing: 0.12em;
     }
-    .hex-ring2 {
-      position: absolute; inset: -12px;
-      clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
-      background: conic-gradient(from 180deg, rgba(245,197,24,0.3), transparent, rgba(0,255,224,0.2), transparent);
-      animation: spin 8s linear infinite reverse;
-      z-index: 0;
+    .logo-name span { color: var(--gold); }
+    .logo-sub {
+      font-size: 10px; font-weight: 600;
+      letter-spacing: 0.22em; color: var(--muted);
+      text-transform: uppercase; margin-top: 2px;
     }
 
-    /* glow behind hex */
-    .hex-glow {
-      position: absolute; inset: -20px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(108,46,185,0.4) 0%, transparent 70%);
-      animation: orbF 3s ease-in-out infinite alternate;
-      z-index: 0;
-    }
-
-    @keyframes spin { to { transform:rotate(360deg); } }
-
-    .vbadge {
-      position:absolute; bottom:2px; right:8px;
-      padding: 3px 8px; border-radius: 6px;
-      background:linear-gradient(135deg, #f5c518, #ffaa00);
-      font-family: 'Teko', sans-serif;
-      font-size:13px; font-weight:700; color:#0d0b1a;
-      border:2px solid var(--dark); z-index:5;
-      box-shadow:0 2px 18px rgba(245,197,24,0.8);
-      animation:starPulse 2.5s ease-in-out infinite;
-      letter-spacing: 0.05em;
-    }
-    @keyframes starPulse {
-      0%,100% { box-shadow:0 2px 18px rgba(245,197,24,0.8); }
-      50%     { box-shadow:0 4px 30px rgba(245,197,24,1); transform:scale(1.07); }
-    }
-
-    .name-row { display:flex; align-items:center; gap:10px; margin-top:14px; }
-    .nr-line   { width:36px; height:1px; }
-    .nr-line.l { background:linear-gradient(90deg,transparent,var(--purp2)); }
-    .nr-line.r { background:linear-gradient(90deg,var(--purp2),transparent); }
-    .nr-txt {
-      font-family:'Teko',sans-serif;
-      font-size:12px; font-weight:600;
-      letter-spacing:0.28em; color:var(--muted); text-transform:uppercase;
-    }
-
-    /* ── TITLE ── */
-    .title-wrap { text-align:center; margin-top:16px; animation:fadeUp 0.5s 0.18s ease both; }
-    .pre-lbl {
-      font-family:'Exo 2',sans-serif;
-      font-size:10px; font-weight:700;
-      letter-spacing:0.4em; color:rgba(0,255,224,0.5);
-      text-transform:uppercase; margin-bottom:6px;
-    }
-
-    h1 {
-      font-family:'Black Ops One',sans-serif;
-      font-size:clamp(54px,16vw,86px);
-      letter-spacing:0.08em; line-height:0.9;
-    }
-    h1 .num {
-      color: var(--gold);
-      text-shadow:
-        0 0 20px rgba(245,197,24,1),
-        0 0 50px rgba(245,197,24,0.6),
-        0 0 90px rgba(255,150,0,0.3);
-    }
-    h1 .word {
-      color: var(--purp3);
-      text-shadow:
-        0 0 20px rgba(155,77,232,0.9),
-        0 0 50px rgba(108,46,185,0.5);
-    }
-
-    /* neon underline */
-    .h1-bar {
-      margin: 8px auto 0;
-      width: 160px; height: 2px;
-      background: linear-gradient(90deg, transparent, var(--neon) 30%, var(--purp2) 70%, transparent);
-      border-radius: 2px;
-      box-shadow: 0 0 12px var(--neon2);
-    }
-
+    /* TAGLINE */
     .tagline {
-      margin-top:10px;
-      font-size:clamp(12px,3.5vw,15px);
-      color:rgba(200,185,240,0.8);
-      font-weight:600; letter-spacing:0.03em; line-height:1.7;
+      text-align: center;
+      font-size: clamp(12px, 3.5vw, 15px);
+      font-weight: 600;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.75;
+      margin-bottom: 22px;
+      max-width: 380px;
     }
-    .tagline .hi  { color:var(--gold3); font-weight:800; }
-    .tagline .hi2 { color:var(--neon);  font-weight:800; }
+    .tagline .g { color: var(--gold); font-weight: 800; }
+    .tagline .w { color: #fff; font-weight: 800; }
 
-    /* ── STATS ── */
-    .stats-wrap { width:100%; max-width:430px; margin-top:18px; animation:fadeUp 0.5s 0.26s ease both; }
-
-    .stats-row {
-      display:grid; grid-template-columns:repeat(4,1fr);
-      border-radius:14px; overflow:hidden; position:relative;
-      background: rgba(255,255,255,0.02);
+    /* STATS */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      width: 100%; max-width: 440px;
+      background: var(--card);
       border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      margin-bottom: 18px;
     }
-    /* gradient top line */
-    .stats-row::before {
-      content:''; position:absolute; top:0; left:0; right:0; height:2px;
-      background: linear-gradient(90deg, transparent, var(--purp2) 30%, var(--neon) 70%, transparent);
+    .stat {
+      padding: 13px 6px;
+      text-align: center;
+      border-right: 1px solid var(--border);
+    }
+    .stat:last-child { border-right: none; }
+    .stat-n {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(19px, 5vw, 24px);
+      letter-spacing: 0.05em; line-height: 1;
+    }
+    .stat-n.gold { color: var(--gold); }
+    .stat-n.green { color: var(--wa); }
+    .stat-l {
+      font-size: 9px; font-weight: 600;
+      letter-spacing: 0.1em; color: var(--muted);
+      text-transform: uppercase; margin-top: 3px;
     }
 
-    .stat-cell { padding:14px 6px; text-align:center; position:relative; }
-    .stat-cell + .stat-cell::before { content:''; position:absolute; left:0; top:20%; bottom:20%; width:1px; background:var(--border); }
-    .sc-n {
-      font-family:'Black Ops One',sans-serif;
-      font-size:clamp(18px,5vw,24px); letter-spacing:0.04em; line-height:1;
-      color:var(--purp3);
+    /* PILLS */
+    .pills {
+      display: flex; flex-wrap: wrap;
+      gap: 7px; justify-content: center;
+      max-width: 440px; width: 100%;
+      margin-bottom: 20px;
     }
-    .sc-n.gold { color:var(--gold); text-shadow: 0 0 14px rgba(245,197,24,0.6); }
-    .sc-n.neon { color:var(--neon); text-shadow: 0 0 14px rgba(0,255,224,0.6); }
-    .sc-l { font-family:'Teko',sans-serif; font-size:9px; font-weight:600; color:var(--muted); text-transform:uppercase; letter-spacing:0.12em; margin-top:4px; }
-
-    /* ── PILLS ── */
-    .pills { display:flex; flex-wrap:wrap; gap:8px; justify-content:center; width:100%; margin-top:16px; animation:fadeUp 0.5s 0.34s ease both; }
-
     .pill {
-      display:flex; align-items:center; gap:6px;
-      background: rgba(108,46,185,0.10);
-      border:1px solid rgba(108,46,185,0.32);
-      border-radius:10px;
-      padding:8px 15px; font-size:clamp(11px,3vw,13px); font-weight:700;
-      color:var(--txt); letter-spacing:0.04em;
-      cursor: default;
+      display: flex; align-items: center; gap: 5px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 6px 13px;
+      font-size: 12px; font-weight: 600;
+      color: rgba(255,255,255,0.78);
+    }
+    .live-dot {
+      width: 5px; height: 5px; border-radius: 50%;
+      background: var(--wa); box-shadow: 0 0 5px var(--wa);
+      animation: blink 1.4s ease-in-out infinite;
+    }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.1} }
+
+    /* DIVIDER */
+    .divider {
+      width: 100%; max-width: 440px; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border) 30%, var(--border) 70%, transparent);
+      margin-bottom: 20px;
+    }
+
+    /* WHATSAPP BUTTON */
+    .wa-wrap { width: 100%; max-width: 440px; margin-bottom: 10px; }
+
+    .wa-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 11px;
+      width: 100%;
+      padding: 15px 22px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #128C7E 0%, #25D366 55%, #1eff7a 100%);
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(14px, 4vw, 17px);
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: 0.01em;
       position: relative; overflow: hidden;
-      transition: border-color 0.2s, background 0.2s;
-    }
-    .pill::before {
-      content:''; position:absolute; inset:0;
-      background: linear-gradient(110deg, transparent 30%, rgba(155,77,232,0.08) 50%, transparent 70%);
-      transform: translateX(-100%);
-      animation: shimmer 3s ease-in-out infinite;
-    }
-    @keyframes shimmer { 0%{transform:translateX(-100%)} 60%,100%{transform:translateX(120%)} }
-
-    .pill .pi { font-size:15px; }
-    .live-tag {
-      font-family:'Teko',sans-serif; font-size:9px; font-weight:700;
-      background:var(--live);
-      color:#fff; border-radius:5px; padding:1px 6px; letter-spacing:0.1em;
-      animation:blink 1.4s ease-in-out infinite;
-      box-shadow:0 0 10px rgba(255,56,96,0.7);
-    }
-    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.15} }
-
-    /* ── TICKER ── */
-    .ticker-row { display:flex; gap:8px; align-items:center; flex-wrap:wrap; justify-content:center; margin-top:14px; animation:fadeUp 0.5s 0.42s ease both; }
-
-    .ti {
-      display:flex; align-items:center; gap:6px;
-      background:rgba(255,255,255,0.025);
-      border:1px solid rgba(0,255,224,0.14); border-radius:8px;
-      padding:7px 13px; font-size:clamp(10px,2.8vw,12px); font-weight:700; letter-spacing:0.05em;
-      cursor: default;
-    }
-    .tdot { width:6px; height:6px; border-radius:50%; flex-shrink:0; animation:blink 1.2s ease-in-out infinite; }
-    .tdot.g { background:var(--green); box-shadow:0 0 8px var(--green); }
-    .tdot.r { background:var(--live);  box-shadow:0 0 8px var(--live); }
-    .tv.g { color:var(--green); }
-    .tv.r { color:var(--live); }
-    .tl { color:var(--muted); }
-
-    /* ── TRUST BADGES ── */
-    .trust-row { display:flex; gap:12px; align-items:center; justify-content:center; margin-top:16px; animation:fadeUp 0.5s 0.46s ease both; flex-wrap:wrap; }
-    .trust-badge {
-      display:flex; align-items:center; gap:6px;
-      font-family:'Teko',sans-serif; font-size:13px; font-weight:600; letter-spacing:0.06em;
-      color:rgba(180,170,220,0.75);
-    }
-    .trust-badge .ti-ic { font-size:16px; }
-
-    /* ── CTA BUTTON ── */
-    .cta-wrap { width:100%; max-width:430px; margin-top:18px; animation:fadeUp 0.5s 0.50s ease both; }
-
-    .btn {
-      display:flex; align-items:center; justify-content:center; gap:12px;
-      width:100%; padding:16px 30px; border-radius:14px;
-      background: linear-gradient(90deg, #3a1278 0%, #6c2eb9 25%, #9b4de8 50%, #00c9b1 75%, #f5c518 100%);
-      background-size: 300% auto;
-      color:#fff;
-      font-family:'Black Ops One',sans-serif;
-      font-size:clamp(16px,4.5vw,21px); letter-spacing:0.18em;
-      text-decoration:none; position:relative; overflow:hidden;
       box-shadow:
-        0 6px 28px rgba(108,46,185,0.55),
-        0 0 0 1px rgba(155,77,232,0.35),
-        0 1px 0 rgba(255,255,255,0.12) inset;
-      animation:gSlide 3.5s linear infinite;
-      transition:transform 0.15s, box-shadow 0.2s;
+        0 0 0 0 rgba(37,211,102,0.5),
+        0 8px 28px rgba(37,211,102,0.38);
+      animation: waGlow 2.2s ease-in-out infinite;
+      transition: transform 0.15s, box-shadow 0.2s;
     }
-    .btn:hover { transform:translateY(-3px); box-shadow:0 12px 40px rgba(108,46,185,0.75), 0 0 0 1px rgba(0,255,224,0.4), 0 1px 0 rgba(255,255,255,0.2) inset; }
-    .btn:active { transform:translateY(1px); }
-    .btn::before {
-      content:''; position:absolute; inset:0;
-      background:linear-gradient(110deg,transparent 25%,rgba(255,255,255,0.15) 50%,transparent 75%);
-      transform:translateX(-100%);
-      animation:shimmerBtn 2.8s ease-in-out infinite;
+    .wa-btn:hover {
+      transform: translateY(-3px);
+      box-shadow:
+        0 0 0 7px rgba(37,211,102,0.12),
+        0 14px 38px rgba(37,211,102,0.55);
     }
-    @keyframes shimmerBtn { 0%{transform:translateX(-100%)} 55%,100%{transform:translateX(110%)} }
-    @keyframes gSlide  { 0%{background-position:0% center} 100%{background-position:300% center} }
+    .wa-btn:active { transform: translateY(1px); }
 
-    .btn-in { position:relative; z-index:1; display:flex; align-items:center; gap:12px; }
-    .btn-ico { font-size:22px; line-height:1; }
-    .btn-lbl { letter-spacing:0.18em; }
-    .btn-arr { font-size:20px; animation:arrBounce 1.6s ease-in-out infinite; }
-    @keyframes arrBounce { 0%,100%{transform:translateX(0)} 50%{transform:translateX(6px)} }
-
-    /* pulse ring on btn */
-    .btn-pulse {
-      position: absolute; inset: 0; border-radius: 14px;
-      border: 1.5px solid rgba(0,255,224,0.4);
-      animation: pulsering 2.5s ease-out infinite;
-      pointer-events: none;
+    @keyframes waGlow {
+      0%,100% {
+        box-shadow:
+          0 0 0 0 rgba(37,211,102,0.45),
+          0 8px 28px rgba(37,211,102,0.35);
+      }
+      50% {
+        box-shadow:
+          0 0 0 9px rgba(37,211,102,0.10),
+          0 8px 38px rgba(37,211,102,0.6);
+      }
     }
-    @keyframes pulsering {
-      0%  { opacity:0.8; transform:scale(1); }
-      80% { opacity:0; transform:scale(1.04); }
-      100%{ opacity:0; transform:scale(1.04); }
+    /* shimmer */
+    .wa-btn::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,0.2) 50%, transparent 70%);
+      transform: translateX(-100%);
+      animation: shimmer 2.4s ease-in-out infinite;
     }
+    @keyframes shimmer { 0%{transform:translateX(-100%)} 58%,100%{transform:translateX(120%)} }
 
-    /* sub btn label */
-    .btn-sub { text-align:center; margin-top:8px; font-size:10px; color:rgba(180,160,255,0.45); letter-spacing:0.06em; font-weight:600; }
-    .btn-sub span { color:var(--neon); }
-
-    /* ── CREDIT ── */
-    .credit {
-      position:fixed; bottom:0; left:0; right:0;
-      display:flex; align-items:center; justify-content:center; gap:10px;
-      padding:8px 16px;
-      background:linear-gradient(180deg,transparent,rgba(7,5,14,0.95));
-      font-size:10px; color:rgba(130,100,180,0.7);
-      letter-spacing:0.04em; z-index:10;
+    .wa-icon { width: 26px; height: 26px; flex-shrink: 0; position: relative; z-index: 1; }
+    .wa-txt { position: relative; z-index: 1; }
+    .wa-arrow {
+      position: relative; z-index: 1; font-size: 17px;
+      animation: arrBounce 1.6s ease-in-out infinite;
     }
-    .credit-sep { width:1px; height:11px; background:rgba(108,46,185,0.3); flex-shrink:0; }
-    .credit a { color:var(--purp3); text-decoration:none; font-weight:700; transition:color 0.2s; }
-    .credit a:hover { color:#fff; }
-    .credit .ag { color:var(--gold); font-family:'Teko',sans-serif; font-size:11px; font-weight:700; }
+    @keyframes arrBounce { 0%,100%{transform:translateX(0)} 50%{transform:translateX(5px)} }
 
-    @keyframes fadeUp { from{opacity:0;transform:translateY(18px)} to{opacity:1;transform:translateY(0)} }
+    .wa-sub {
+      text-align: center; font-size: 11px;
+      color: var(--muted); margin-top: 7px; font-weight: 500;
+    }
+    .wa-sub b { color: var(--wa3); font-weight: 700; }
 
-    /* ══ RESPONSIVE ══ */
-    @media (max-width:380px) {
-      .page { padding:55px 14px 46px; }
-      .logo-outer { width:130px; height:130px; }
-      h1 { font-size:46px; }
-      .tagline { font-size:11.5px; }
-      .stats-wrap { margin-top:13px; }
-      .stat-cell { padding:10px 3px; }
-      .sc-n { font-size:17px; }
-      .pills { margin-top:12px; gap:6px; }
-      .pill { font-size:10.5px; padding:6px 10px; }
-      .ticker-row { margin-top:11px; gap:5px; }
-      .ti { font-size:9.5px; padding:5px 9px; }
-      .cta-wrap { margin-top:13px; }
-      .btn { font-size:15px; padding:13px 18px; }
-      .corner { width:40px; height:40px; }
-      .trust-row { gap:8px; }
-      .trust-badge { font-size:11px; }
+    /* TRUST */
+    .trust {
+      display: flex; gap: 14px;
+      align-items: center; justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 18px;
+      max-width: 440px; width: 100%;
+    }
+    .trust-item {
+      display: flex; align-items: center; gap: 5px;
+      font-size: 11px; font-weight: 600; color: var(--muted);
     }
 
-    @media (min-width:381px) and (max-width:520px) {
-      .logo-outer { width:150px; height:150px; }
+    /* FOOTER */
+    .footer {
+      position: fixed; bottom: 0; left: 0; right: 0;
+      padding: 7px 16px;
+      background: rgba(10,10,15,0.96);
+      border-top: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      gap: 10px; flex-wrap: wrap;
+      font-size: 10px; color: rgba(255,255,255,0.28); z-index: 10;
     }
+    .footer a { color: rgba(255,255,255,0.42); text-decoration: none; font-weight: 600; }
+    .footer a:hover { color: #fff; }
+    .footer .sep { color: rgba(255,255,255,0.15); }
 
-    @media (min-width:521px) and (max-width:767px) {
-      .page { padding:72px 32px 58px; }
-      .logo-outer { width:170px; height:170px; }
-      h1 { font-size:74px; }
+    /* FADE IN */
+    @keyframes fadeUp { from{opacity:0;transform:translateY(14px)} to{opacity:1;transform:translateY(0)} }
+    .page > * { animation: fadeUp 0.45s ease both; }
+    .page > *:nth-child(1) { animation-delay: 0.00s; }
+    .page > *:nth-child(2) { animation-delay: 0.07s; }
+    .page > *:nth-child(3) { animation-delay: 0.13s; }
+    .page > *:nth-child(4) { animation-delay: 0.19s; }
+    .page > *:nth-child(5) { animation-delay: 0.25s; }
+    .page > *:nth-child(6) { animation-delay: 0.31s; }
+    .page > *:nth-child(7) { animation-delay: 0.37s; }
+    .page > *:nth-child(8) { animation-delay: 0.43s; }
+    .page > *:nth-child(9) { animation-delay: 0.49s; }
+
+    /* RESPONSIVE */
+    @media (max-width: 360px) {
+      .logo-img-wrap { width: 88px; height: 88px; }
+      .logo-name { font-size: 24px; }
+      .stat-n { font-size: 17px; }
+      .wa-btn { font-size: 13px; padding: 13px 16px; }
+      .wa-icon { width: 22px; height: 22px; }
     }
-
-    @media (min-width:768px) {
-      .page { padding:30px 55px 32px; }
-      .logo-outer { width:165px; height:165px; }
-      h1 { font-size:82px; }
-      .tagline { font-size:15px; }
-      .stats-wrap { max-width:490px; margin-top:20px; }
-      .stat-cell { padding:16px 10px; }
-      .sc-n { font-size:26px; }
-      .pills { gap:10px; margin-top:18px; }
-      .pill { font-size:14px; padding:9px 18px; }
-      .cta-wrap { max-width:490px; margin-top:20px; }
-      .btn { font-size:22px; padding:17px 34px; }
-      .corner { width:70px; height:70px; }
+    @media (min-width: 480px) {
+      .page { padding: 48px 28px 70px; }
+      .logo-img-wrap { width: 118px; height: 118px; }
+      .logo-name { font-size: 34px; }
     }
-
-    @media (min-width:1200px) {
-      .logo-outer { width:180px; height:180px; }
-      h1 { font-size:94px; }
-      .stats-wrap, .cta-wrap { max-width:550px; }
+    @media (min-width: 768px) {
+      .page { padding: 56px 40px 80px; }
+      .logo-img-wrap { width: 130px; height: 130px; }
+      .logo-name { font-size: 38px; }
+      .tagline { font-size: 15px; margin-bottom: 26px; }
+      .stats, .pills, .wa-wrap, .trust, .divider { max-width: 500px; }
+      .stat-n { font-size: 26px; }
+      .stat { padding: 15px 8px; }
+      .pill { font-size: 13px; padding: 7px 15px; }
+      .wa-btn { font-size: 17px; padding: 16px 26px; border-radius: 15px; }
+      .wa-icon { width: 28px; height: 28px; }
+      .trust { margin-top: 22px; }
+      .trust-item { font-size: 12px; }
+    }
+    @media (min-width: 1024px) {
+      .stats, .pills, .wa-wrap, .trust, .divider { max-width: 520px; }
+      .logo-img-wrap { width: 138px; height: 138px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- BG -->
-  <div class="bg-wrap">
-    <div class="bg-base"></div>
-    <div class="bg-hex"></div>
-    <div class="bg-beam"></div>
-    <div class="bg-beam2"></div>
-    <div class="bg-scan"></div>
-    <div class="orb o1"></div>
-    <div class="orb o2"></div>
-    <div class="orb o3"></div>
-    <div class="particles" id="ptcl"></div>
+<div class="bg"></div>
+
+<main class="page">
+
+  <div class="top-label">🏆 &nbsp;<span>India's #1</span>&nbsp; Sports Exchange &nbsp;🏆</div>
+
+  <div class="logo-wrap">
+    <div class="logo-img-wrap">
+      <img src="https://fantasticczone.site/wp-content/uploads/2026/03/99pulse.org_.png" alt="99PULSE"
+        onerror="this.style.display='none'; this.insertAdjacentHTML('afterend','<span class=logo-fallback>99</span>')"/>
+    </div>
+    <div class="logo-name"><span>99</span>PULSE</div>
+    <div class="logo-sub">Official VIP Platform</div>
   </div>
 
-  <!-- Corner brackets -->
-  <div class="corner c-tl">
-    <svg viewBox="0 0 60 60" fill="none">
-      <path d="M3 57V10C3 6.1 6.1 3 10 3H57" stroke="rgba(155,77,232,0.5)" stroke-width="1.5"/>
-      <path d="M3 22V10C3 6.1 6.1 3 10 3H22" stroke="rgba(0,255,224,0.6)" stroke-width="1.5"/>
-      <circle cx="3" cy="3" r="2.5" fill="rgba(0,255,224,0.9)"/>
-      <circle cx="57" cy="3" r="1.5" fill="rgba(155,77,232,0.5)"/>
-    </svg>
-  </div>
-  <div class="corner c-tr">
-    <svg viewBox="0 0 60 60" fill="none">
-      <path d="M3 57V10C3 6.1 6.1 3 10 3H57" stroke="rgba(155,77,232,0.5)" stroke-width="1.5"/>
-      <path d="M3 22V10C3 6.1 6.1 3 10 3H22" stroke="rgba(0,255,224,0.6)" stroke-width="1.5"/>
-      <circle cx="3" cy="3" r="2.5" fill="rgba(0,255,224,0.9)"/>
-    </svg>
-  </div>
-  <div class="corner c-bl">
-    <svg viewBox="0 0 60 60" fill="none">
-      <path d="M3 57V10C3 6.1 6.1 3 10 3H57" stroke="rgba(155,77,232,0.5)" stroke-width="1.5"/>
-      <path d="M3 22V10C3 6.1 6.1 3 10 3H22" stroke="rgba(245,197,24,0.55)" stroke-width="1.5"/>
-      <circle cx="3" cy="3" r="2.5" fill="rgba(245,197,24,0.8)"/>
-    </svg>
-  </div>
-  <div class="corner c-br">
-    <svg viewBox="0 0 60 60" fill="none">
-      <path d="M3 57V10C3 6.1 6.1 3 10 3H57" stroke="rgba(155,77,232,0.5)" stroke-width="1.5"/>
-      <path d="M3 22V10C3 6.1 6.1 3 10 3H22" stroke="rgba(245,197,24,0.55)" stroke-width="1.5"/>
-      <circle cx="3" cy="3" r="2.5" fill="rgba(245,197,24,0.8)"/>
-    </svg>
-  </div>
-
-  <main class="page">
-
-    <!-- Top Badge -->
-    <div class="top-badge">
-      <div class="tb-line"></div>
-      <div class="tb-dot"></div>
-      <div class="tb-txt">🏆 &nbsp;India's #1 Sports Exchange&nbsp; 🏆</div>
-      <div class="tb-dot"></div>
-      <div class="tb-line"></div>
-    </div>
-
-    <!-- Logo -->
-    <a href="https://wa.link/qs8ku0" target="_blank" rel="noopener" class="logo-link">
-      <div class="logo-section">
-        <div class="logo-outer">
-          <div class="hex-glow"></div>
-          <div class="hex-ring2"></div>
-          <div class="hex-ring1"></div>
-          <div class="hex-clip">
-            <img src="https://fantasticczone.site/wp-content/uploads/2026/03/99pulse.org_.png" alt="99PULSE"
-              onerror="this.style.display='none';this.parentElement.innerHTML='<span class=\'logo-fb\'>99</span>'"/>
-          </div>
-          <div class="vbadge">VIP</div>
-        </div>
-        <div class="name-row">
-          <div class="nr-line l"></div>
-          <span class="nr-txt">99PULSE Official</span>
-          <div class="nr-line r"></div>
-        </div>
-      </div>
-    </a>
-
-    <!-- Title -->
-    <div class="title-wrap">
-      <div class="pre-lbl">— Official VIP Platform —</div>
-      <h1><span class="num">99</span>&thinsp;<span class="word">PULSE</span></h1>
-      <div class="h1-bar"></div>
-      <p class="tagline">
-        <span class="hi">Trusted Since 2020</span> · <span class="hi2">Instant ID · Fast Withdrawal</span> 💰<br/>
-        Cricket · Tennis · Soccer · Casino — Play Like A Pro
-      </p>
-    </div>
-
-    <!-- Stats -->
-    <div class="stats-wrap">
-      <div class="stats-row">
-        <div class="stat-cell"><div class="sc-n gold">50L+</div><div class="sc-l">Users</div></div>
-        <div class="stat-cell"><div class="sc-n neon">24/7</div><div class="sc-l">Support</div></div>
-        <div class="stat-cell"><div class="sc-n">FREE</div><div class="sc-l">Join Now</div></div>
-        <div class="stat-cell"><div class="sc-n gold">5★</div><div class="sc-l">Rated</div></div>
-      </div>
-    </div>
-
-    <!-- Pills -->
-    <div class="pills">
-      <div class="pill"><span class="pi">🏏</span>Cricket<span class="live-tag">LIVE</span></div>
-      <div class="pill"><span class="pi">🎾</span>Tennis</div>
-      <div class="pill"><span class="pi">⚽</span>Soccer</div>
-      <div class="pill"><span class="pi">🐎</span>Horse</div>
-      <div class="pill"><span class="pi">🎰</span>Casino</div>
-    </div>
-
-  
-
-    <!-- CTA Button -->
-    <div class="cta-wrap">
-      <a href="https://wa.link/qs8ku0" target="_blank" rel="noopener" class="btn">
-        <div class="btn-pulse"></div>
-        <span class="btn-in">
-          <span class="btn-ico">💬</span>
-          <span class="btn-lbl">GET VIP ID — JOIN FREE</span>
-          <span class="btn-arr">→</span>
-        </span>
-      </a>
-      <p class="btn-sub">WhatsApp pe message karo · <span>Instant ID milega</span></p>
-    </div>
-
-  </main>
-
-  <!-- Credit -->
-  <p class="credit">
-    <span>18+ · Play Responsibly</span>
-    <span class="credit-sep"></span>
-    <a href="https://wa.link/qs8ku0" target="_blank" rel="noopener">wa.link/qs8ku0</a>
-    <span class="credit-sep"></span>
-    <span>Ads by <a href="https://t.me/+TRlJl628l-FkMWE9" target="_blank" rel="noopener" class="ag">@Nexgroww_agency</a></span>
+  <p class="tagline">
+    <span class="g">Trusted Since 2020</span> · <span class="w">Instant ID</span> · Fast Withdrawal 💰<br/>
+    Cricket · Tennis · Soccer · Casino
   </p>
 
-  <script>
-    // Particles
-    const c = document.getElementById('ptcl');
-    const cols = [
-      'rgba(155,77,232,0.9)',
-      'rgba(0,255,224,0.8)',
-      'rgba(245,197,24,0.7)',
-      'rgba(108,46,185,0.8)',
-      'rgba(0,200,180,0.6)'
-    ];
-    for (let i = 0; i < 18; i++) {
-      const d = document.createElement('div'); d.className = 'p';
-      const s = Math.random() * 3 + 1.5;
-      const col = cols[Math.floor(Math.random() * cols.length)];
-      d.style.cssText = `width:${s}px;height:${s}px;background:${col};left:${Math.random()*100}%;top:${Math.random()*100}%;animation-duration:${7+Math.random()*8}s;animation-delay:${Math.random()*6}s;box-shadow:0 0 ${s*5}px ${col};`;
-      c.appendChild(d);
-    }
-  </script>
+  <div class="stats">
+    <div class="stat"><div class="stat-n gold">50L+</div><div class="stat-l">Users</div></div>
+    <div class="stat"><div class="stat-n green">24/7</div><div class="stat-l">Support</div></div>
+    <div class="stat"><div class="stat-n">FREE</div><div class="stat-l">Join Now</div></div>
+    <div class="stat"><div class="stat-n gold">5★</div><div class="stat-l">Rated</div></div>
+  </div>
+
+  <div class="pills">
+    <div class="pill"><span class="live-dot"></span>🏏 Cricket</div>
+    <div class="pill">🎾 Tennis</div>
+    <div class="pill">⚽ Soccer</div>
+    <div class="pill">🐎 Horse</div>
+    <div class="pill">🎰 Casino</div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="wa-wrap">
+    <a href="https://wa.link/qs8ku0" target="_blank" rel="noopener" class="wa-btn">
+      <svg class="wa-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="16" cy="16" r="16" fill="rgba(255,255,255,0.15)"/>
+        <path d="M16 5.5C10.2 5.5 5.5 10.2 5.5 16c0 1.9.5 3.7 1.4 5.2L5.5 26.5l5.5-1.4c1.5.8 3.2 1.3 5 1.3 5.8 0 10.5-4.7 10.5-10.5S21.8 5.5 16 5.5zm5.5 14.8c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .3-3.3-.7-2.8-1.2-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8 0-1.3.7-2 .9-2.2.2-.2.5-.3.7-.3h.5c.2 0 .4.1.5.4.2.5.7 1.7.8 1.8.1.2.1.4 0 .5-.1.2-.1.3-.3.5l-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.4 1.8 2.2 1.2 1 2.2 1.3 2.5 1.5.3.1.5.1.7-.1l.5-.6c.2-.2.4-.2.6-.1l1.8.8c.2.1.4.2.5.3.1.4 0 1.2-.2 1.7z" fill="white"/>
+      </svg>
+      <span class="wa-txt">WhatsApp pe Join Karo</span>
+      <span class="wa-arrow">→</span>
+    </a>
+    <p class="wa-sub">Click karo &amp; <b>Instant VIP ID</b> pao — bilkul FREE 🎉</p>
+  </div>
+
+  <div class="trust">
+    <div class="trust-item">🔒 Secure</div>
+    <div class="trust-item">⚡ Instant Withdrawal</div>
+    <div class="trust-item">🎁 Welcome Bonus</div>
+    <div class="trust-item">📱 24/7 Support</div>
+  </div>
+
+</main>
+
+<div class="footer">
+  <span>18+ · Play Responsibly</span>
+  <span class="sep">|</span>
+  <a href="https://wa.link/qs8ku0" target="_blank" rel="noopener">wa.link/qs8ku0</a>
+  <span class="sep">|</span>
+  <span>Ads by <a href="https://t.me/+TRlJl628l-FkMWE9" target="_blank" rel="noopener">@Nexgroww_agency</a></span>
+</div>
 
 </body>
 </html>
